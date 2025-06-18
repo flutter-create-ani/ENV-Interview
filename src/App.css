@@ -1,1 +1,186 @@
 @import "tailwindcss";
+
+/* Custom Color Variables - Using unique naming to avoid Tailwind conflicts */
+:root {
+  /* Custom Green Palette - prefixed to avoid conflicts */
+  --custom-green-50: #f0fdf4;
+  --custom-green-100: #dcfce7;
+  --custom-green-200: #bbf7d0;
+  --custom-green-300: #86efac;
+  --custom-green-400: #4ade80;
+  --custom-green-500: #22c55e;
+  --custom-green-600: #16a34a;
+  --custom-green-700: #15803d;
+
+  /* Custom Blue Palette */
+  --custom-blue-50: #eff6ff;
+  --custom-blue-300: #93c5fd;
+  --custom-blue-500: #3b82f6;
+  --custom-blue-600: #2563eb;
+
+  /* Custom Purple Palette */
+  --custom-purple-50: #faf5ff;
+  --custom-purple-500: #a855f7;
+  --custom-purple-600: #9333ea;
+
+  /* Custom Orange & Yellow */
+  --custom-orange-500: #f97316;
+  --custom-yellow-500: #eab308;
+
+  /* Custom Gray Palette */
+  --custom-gray-50: #f9fafb;
+  --custom-gray-100: #f3f4f6;
+  --custom-gray-200: #e5e7eb;
+  --custom-gray-500: #6b7280;
+  --custom-gray-600: #4b5563;
+  --custom-gray-700: #374151;
+  --custom-gray-900: #111827;
+
+  /* Utility Colors */
+  --custom-white: #ffffff;
+  --custom-black: #000000;
+  --custom-red-500: #ef4444;
+
+  /* Custom Gradient Variables */
+  --gradient-hero-bg: linear-gradient(to bottom right, var(--custom-green-50), var(--custom-white), var(--custom-green-100));
+  --gradient-primary: linear-gradient(to right, var(--custom-green-500), var(--custom-green-400), var(--custom-green-600));
+  --gradient-secondary: linear-gradient(to right, var(--custom-green-500), var(--custom-green-600));
+  --gradient-subtle-green: linear-gradient(to right, var(--custom-green-400), var(--custom-green-300));
+  --gradient-subtle-blue: linear-gradient(to right, var(--custom-green-300), var(--custom-blue-300));
+  --gradient-gray-green: linear-gradient(to right, var(--custom-gray-50), var(--custom-green-50));
+
+  /* Opacity Variants */
+  --green-alpha-20: rgba(74, 222, 128, 0.2);
+  --green-alpha-15: rgba(134, 239, 172, 0.15);
+  --green-alpha-10: rgba(134, 239, 172, 0.1);
+  --blue-alpha-10: rgba(147, 197, 253, 0.1);
+  --white-alpha-80: rgba(255, 255, 255, 0.8);
+  --white-alpha-90: rgba(255, 255, 255, 0.9);
+}
+
+/* Custom Utility Classes - Using @layer to work with Tailwind */
+@layer utilities {
+  /* Custom Background Gradients */
+  .bg-hero-gradient {
+    background: var(--gradient-hero-bg);
+  }
+
+  .bg-primary-gradient {
+    background: var(--gradient-primary);
+  }
+
+  .bg-secondary-gradient {
+    background: var(--gradient-secondary);
+  }
+
+  .bg-subtle-green-gradient {
+    background: var(--gradient-subtle-green);
+  }
+
+  /* Custom Text Gradients */
+  .text-primary-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+  }
+
+  .text-gradient-animated {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: gradient-shift 3s ease-in-out infinite;
+  }
+
+  /* Custom Shadows */
+  .shadow-custom-green {
+    box-shadow: 0 10px 15px -3px rgba(34, 197, 94, 0.1), 0 4px 6px -2px rgba(34, 197, 94, 0.05);
+  }
+
+  .shadow-custom-green-lg {
+    box-shadow: 0 20px 25px -5px rgba(34, 197, 94, 0.1), 0 10px 10px -5px rgba(34, 197, 94, 0.04);
+  }
+
+  .shadow-custom-3xl {
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Custom Backdrop Effects */
+  .backdrop-custom-blur-sm {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  .backdrop-custom-blur-xl {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+
+  /* Custom Animations */
+  .animate-custom-float {
+    animation: custom-float 4s ease-in-out infinite;
+  }
+
+  .animate-custom-pulse {
+    animation: custom-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-custom-gradient {
+    animation: gradient-shift 3s ease-in-out infinite;
+  }
+}
+
+/* Custom Keyframes */
+@keyframes custom-float {
+  0%, 100% {
+    transform: translateY(-15px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(15px) rotate(2deg);
+  }
+}
+
+@keyframes custom-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Custom Component Styles */
+.glassmorphism {
+  background: var(--white-alpha-90);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.floating-card {
+  background: var(--white-alpha-80);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-custom-green-lg);
+  transition: all 0.3s ease;
+}
+
+.floating-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-custom-3xl);
+}

@@ -110,7 +110,7 @@ const HeroSection = () => {
                     {/* Enhanced Left Content */}
                     <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
                         <motion.div
-                            className="block sm:hidden inline-flex items-center space-x-2 bg-green-100 text-green-700 px-4 py-6 rounded-full text-sm font-semibold"
+                            className="block sm:hidden inline-flex items-center space-x-2 bg-green-100 text-green-700 px-4 py-2  rounded-full text-sm font-semibold"
                             variants={itemVariants}
                             whileHover={{ scale: 1.05 }}
                         >

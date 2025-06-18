@@ -15,6 +15,7 @@ import HomePage from './pages/HomePage';
 import Dock from './masterLayout/Layout';
 import { ErrorPage } from './pages/ErrorPage';
 import ContactPage from './pages/ContactPage';
+import MobileFloatingMenu from './components/child/MobileFloatingMenu';
 
 const items = [
   {
@@ -48,13 +49,12 @@ const items = [
 function AppLayout() {
   return (
     <div className="min-h-screen relative">
-      {/* Main content area - removed flex-col, pb-20, and overflow-auto */}
       <main className="min-h-screen">
         <Outlet />
       </main>
-      
-      {/* Fixed dock at bottom */}
-      <div className="fixed bottom-0 left-0 right-0 z-50">
+
+      {/* Desktop Dock */}
+      <div className="fixed hidden sm:block bottom-0 left-0 right-0 z-50">
         <Dock
           items={items}
           panelHeight={68}
@@ -62,6 +62,9 @@ function AppLayout() {
           magnification={70}
         />
       </div>
+
+      {/* Mobile FAB */}
+      <MobileFloatingMenu />
     </div>
   );
 }
