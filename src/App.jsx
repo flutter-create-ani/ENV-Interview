@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { 
-  BrowserRouter, 
-  Routes, 
-  Route, 
-  createBrowserRouter, 
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  createBrowserRouter,
   RouterProvider,
-  Outlet, 
+  Outlet,
   Link
 } from 'react-router-dom';
 import { VscHome, VscMail, VscSettingsGear, VscSignIn } from 'react-icons/vsc';
@@ -15,7 +15,6 @@ import HomePage from './pages/HomePage';
 import Dock from './masterLayout/Layout';
 import { ErrorPage } from './pages/ErrorPage';
 import ContactPage from './pages/ContactPage';
-
 
 const items = [
   {
@@ -40,8 +39,7 @@ const items = [
     icon: <VscSignIn size={18} color='white'/>,
     label: 'Login / Register',
     onClick: () => {
-      
-      window.location.href = '/auth'; 
+      window.location.href = '/auth';
     },
     className: 'bg-black hover:bg-gray-700'
   }
@@ -49,21 +47,20 @@ const items = [
 
 function AppLayout() {
   return (
-    <div className="flex flex-col min-h-screen relative">
-      {/* Main content area */}
-      <main className="flex-1 pb-20 overflow-auto">
+    <div className="min-h-screen relative">
+      {/* Main content area - removed flex-col, pb-20, and overflow-auto */}
+      <main className="min-h-screen">
         <Outlet />
       </main>
       
-      <div className="fixed bottom-0 left-0 right-0 z-50 ">
-
-          <Dock
-            items={items}
-            panelHeight={68}
-            baseItemSize={50}
-            magnification={70}
-          />
-
+      {/* Fixed dock at bottom */}
+      <div className="fixed bottom-0 left-0 right-0 z-50">
+        <Dock
+          items={items}
+          panelHeight={68}
+          baseItemSize={50}
+          magnification={70}
+        />
       </div>
     </div>
   );
@@ -84,7 +81,6 @@ const router = createBrowserRouter([
         path: '/contact',
         element: <ContactPage/>
       }
-      
     ]
   }
 ]);
