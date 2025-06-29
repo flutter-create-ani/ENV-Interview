@@ -328,7 +328,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* Enhanced Stats Section */}
-                <motion.div
+                {/* <motion.div
                     className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mt-16 sm:mt-20 pt-12 sm:pt-20 border-t border-gray-200"
                     variants={containerVariants}
                 >
@@ -354,7 +354,7 @@ const HeroSection = () => {
                             <p className="text-xs sm:text-sm text-gray-600 font-semibold">{stat.label}</p>
                         </motion.div>
                     ))}
-                </motion.div>
+                </motion.div> */}
             </motion.div>
         </div>
     );

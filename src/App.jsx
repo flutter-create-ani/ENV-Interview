@@ -6,9 +6,10 @@ import {
   createBrowserRouter,
   RouterProvider,
   Outlet,
-  Link
+  Link,
+  Navigate
 } from 'react-router-dom';
-import { VscHome, VscMail, VscSettingsGear, VscSignIn } from 'react-icons/vsc';
+import { VscHome, VscMail, VscSettingsGear, VscSignIn,VscLayout } from 'react-icons/vsc';
 import viteLogo from '/vite.svg';
 import './App.css';
 import HomePage from './pages/HomePage';
@@ -16,34 +17,34 @@ import Dock from './masterLayout/Layout';
 import { ErrorPage } from './pages/ErrorPage';
 import ContactPage from './pages/ContactPage';
 import MobileFloatingMenu from './components/child/MobileFloatingMenu';
+import FeaturesPage from './pages/FeaturesPage';
+import AvailableSoonPage from './pages/AvailableSoonPage';
 
 const items = [
   {
     icon: <VscHome size={18} color='white'/>,
     label: 'Home',
-    onClick: () => window.location.href = '/',
+    route:  '/',
     className: 'bg-black hover:bg-gray-700'
   },
   {
     icon: <VscMail size={18} color='white'/>,
     label: 'Contact Us',
-    onClick: () => window.location.href = '/contact',
+    route:  '/contact',
     className: 'bg-black hover:bg-gray-700'
   },
   {
     icon: <VscSettingsGear size={18} color='white'/>,
     label: 'Features',
-    onClick: () => window.location.href = '/features',
+    route: 'features',
     className: 'bg-black hover:bg-gray-700'
   },
   {
-    icon: <VscSignIn size={18} color='white'/>,
-    label: 'Login / Register',
-    onClick: () => {
-      window.location.href = '/auth';
-    },
-    className: 'bg-black hover:bg-gray-700'
-  }
+  icon: <VscLayout size={18} color="white" />,
+  label: 'Go To Dashboard',
+  route: '/dashboard',
+  className: 'bg-black hover:bg-gray-700'
+}
 ];
 
 function AppLayout() {
@@ -82,7 +83,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/contact',
-        element: <ContactPage/>
+        element: <ContactPage />
+      },
+      {
+        path: '/features',
+        element: <FeaturesPage />
+      },
+      {
+        path: '/dashboard',
+        element: <AvailableSoonPage/>
       }
     ]
   }

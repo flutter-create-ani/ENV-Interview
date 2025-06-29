@@ -1,12 +1,8 @@
-import React from 'react'
-import ContactPageLayer from '../components/ContactPageLayer'
+import React from 'react';
+import ContactPageLayer from '../components/ContactPageLayer';
 
 function ContactPage() {
-  return (
-    <>
-    <ContactPageLayer/>
-    </>
-  )
+  return <ContactPageLayer />;
 }
 
-export default ContactPage
+export default ContactPage;

@@ -1,37 +1,40 @@
 import { useState } from 'react';
 import {
   VscHome,
+  VscLayout,
   VscMail,
   VscSettingsGear,
   VscSignIn,
   VscThreeBars,
 } from 'react-icons/vsc';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const items = [
   {
     icon: <VscHome size={18} />,
     label: 'Home',
-    onClick: () => (window.location.href = '/'),
+    route:  '/',
   },
   {
     icon: <VscMail size={18} />,
     label: 'Contact',
-    onClick: () => (window.location.href = '/contact'),
+      route:  '/contact',
   },
   {
     icon: <VscSettingsGear size={18} />,
     label: 'Features',
-    onClick: () => (window.location.href = '/features'),
+route: '/features',
   },
   {
-    icon: <VscSignIn size={18} />,
-    label: 'Login',
-    onClick: () => (window.location.href = '/auth'),
+    icon: <VscLayout size={18} />,
+    label: 'Dashboard',
+ route: '/dashboard',
   },
 ];
 
 export default function MobileFloatingMenu() {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
   return (
@@ -49,10 +52,8 @@ export default function MobileFloatingMenu() {
               {items.map((item, idx) => (
                 <motion.button
                   key={idx}
-                  onClick={() => {
-                    item.onClick();
-                    setOpen(false);
-                  }}
+                  onClick={() => {navigate(item.route) 
+                    setOpen(false);}}
                   className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-black text-white text-sm font-medium shadow-md hover:bg-gray-800 transition-all duration-200"
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
