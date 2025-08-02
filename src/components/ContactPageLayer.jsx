@@ -15,12 +15,14 @@ const ContactPageLayer = () => {
   };
 
   return (
-    <section className="min-h-screen px-4 sm:px-8 lg:px-16 py-20 bg-custom-gray-50">
+    <section className="min-h-screen px-4 sm:px-8 lg:px-16 py-20 bg-hero-gradient">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-custom-gray-900 mb-2">Get in Touch</h2>
-          <p className="text-custom-gray-500">
+          <h2 className="text-4xl sm:text-5xl font-bold text-primary-gradient mb-2">
+            Get in Touch
+          </h2>
+          <p className="text-custom-gray-700 max-w-xl mx-auto">
             Have questions, feedback, or need support? Drop us a message and we’ll get back to you soon.
           </p>
         </div>
@@ -28,11 +30,13 @@ const ContactPageLayer = () => {
         {/* Form */}
         <form
           onSubmit={handleSubmit}
-          className="floating-card p-8 rounded-2xl space-y-6 shadow-custom-green"
+          className="glassmorphism p-8 rounded-2xl space-y-6 shadow-custom-green-lg floating-card"
         >
           {/* Name */}
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-custom-gray-700 mb-1">Your Name</label>
+            <label htmlFor="name" className="block text-sm font-medium text-custom-gray-700 mb-1">
+              Your Name
+            </label>
             <input
               type="text"
               name="name"
@@ -47,7 +51,9 @@ const ContactPageLayer = () => {
 
           {/* Email */}
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-custom-gray-700 mb-1">Email Address</label>
+            <label htmlFor="email" className="block text-sm font-medium text-custom-gray-700 mb-1">
+              Email Address
+            </label>
             <input
               type="email"
               name="email"
@@ -62,7 +68,9 @@ const ContactPageLayer = () => {
 
           {/* Message */}
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-custom-gray-700 mb-1">Your Message</label>
+            <label htmlFor="message" className="block text-sm font-medium text-custom-gray-700 mb-1">
+              Your Message
+            </label>
             <textarea
               name="message"
               id="message"
@@ -75,10 +83,13 @@ const ContactPageLayer = () => {
             ></textarea>
           </div>
 
-          {/* Button */}
+          {/* Submit Button */}
           <button
             type="submit"
-            className="bg-[var(--custom-green-600)] hover:bg-[var(--custom-green-700)] text-white font-semibold px-6 py-3 rounded-md transition duration-300"
+            className="w-full text-white font-semibold px-6 py-3 rounded-md transition duration-300"
+            style={{
+              background: 'linear-gradient(to right, var(--custom-green-500), var(--custom-green-600))',
+            }}
           >
             Send Message
           </button>

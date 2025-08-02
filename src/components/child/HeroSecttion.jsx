@@ -175,6 +175,7 @@ const HeroSection = () => {
                                 whileTap={{ scale: 0.98 }}
                                 variants={pulseVariants}
                                 animate="animate"
+                                onClick={() => window.location.href = '/login'}
                             >
                                 <span>Start Free Practice</span>
                                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />

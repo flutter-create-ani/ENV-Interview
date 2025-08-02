@@ -19,6 +19,8 @@ import ContactPage from './pages/ContactPage';
 import MobileFloatingMenu from './components/child/MobileFloatingMenu';
 import FeaturesPage from './pages/FeaturesPage';
 import AvailableSoonPage from './pages/AvailableSoonPage';
+import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
 
 const items = [
   {
@@ -42,7 +44,7 @@ const items = [
   {
   icon: <VscLayout size={18} color="white" />,
   label: 'Go To Dashboard',
-  route: '/dashboard',
+  route: '/login',
   className: 'bg-black hover:bg-gray-700'
 }
 ];
@@ -75,7 +77,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <AppLayout />,
-    errorElement: <ErrorPage />,
+    errorElement: <AvailableSoonPage/>,
     children: [
       {
         path: '/',
@@ -90,8 +92,12 @@ const router = createBrowserRouter([
         element: <FeaturesPage />
       },
       {
-        path: '/dashboard',
-        element: <AvailableSoonPage/>
+        path: '/login',
+        element: <LoginPage/>
+      },
+      {
+        path: '/signup',
+        element: <SignupPage/>
       }
     ]
   }

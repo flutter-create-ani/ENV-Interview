@@ -79,14 +79,14 @@ const features = [
 
 const FeaturesPageLayer = () => {
   return (
-    <section className="min-h-screen px-4 sm:px-8 lg:px-16 py-20 bg-custom-gray-50">
+    <section className="min-h-screen px-4 sm:px-8 lg:px-16 py-20 bg-hero-gradient">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-custom-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-primary-gradient mb-4">
             Why Engineers Trust ENV Interview
           </h2>
-          <p className="text-custom-gray-600 max-w-2xl mx-auto">
+          <p className="text-custom-gray-700 max-w-2xl mx-auto">
             ENV Interview isn't just another mock platform — it's a complete practice environment designed to challenge you like real interviews do.
           </p>
         </div>
@@ -98,7 +98,7 @@ const FeaturesPageLayer = () => {
             return (
               <div
                 key={index}
-                className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 border border-custom-gray-100 floating-card"
+                className="glassmorphism p-6 rounded-2xl shadow-custom-green-lg hover:shadow-custom-3xl transition duration-300 floating-card"
               >
                 <div
                   className="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
